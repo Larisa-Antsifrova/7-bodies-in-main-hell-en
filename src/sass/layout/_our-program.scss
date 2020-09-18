@@ -11,7 +11,23 @@
   @media screen and (min-width: 1344px) {
     padding-top: 120px;
     position: relative;
+<<<<<<< Updated upstream
   }  
+=======
+    padding-bottom: 0;
+  }
+}
+
+.program-section::before {
+  @media screen and (min-width: 1344px) {
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid $basicWhiteColor;
+    position: absolute;
+    top: 277px;
+    left: 0px;
+  }
+>>>>>>> Stashed changes
 }
 
 .program-section .section-title {
@@ -35,12 +51,21 @@
       margin-left: 20px;
     }
 
+<<<<<<< Updated upstream
     @media screen and (min-width: 1344px) {
       font-size: 46px;
       text-align: left;
       margin-bottom: 160px;
       margin-left: 169px;
     }
+=======
+  @media screen and (min-width: 1344px) {
+    font-size: 46px;
+    text-align: left;
+    margin-bottom: 160px;
+    margin-left: 115px;
+  }
+>>>>>>> Stashed changes
 }
 
 .program-title {
