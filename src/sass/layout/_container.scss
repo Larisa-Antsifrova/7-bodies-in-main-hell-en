@@ -1,23 +1,19 @@
 .container {
   width: 100%;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-right: auto;
-  margin-left: auto;
+  @include margin(inherit, auto, inherit, auto);
+  @include padding(inherit, 20px, inherit, 20px);
 
-  @media screen and (min-width: 320px) {
+  @include for-size(phone-only) {
     width: 320px;
   }
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-landscape) {
     width: 768px;
-    padding-right: 40px;
-    padding-left: 40px;
+    @include padding(inherit, 40px, inherit, 40px);
   }
 
-  @media screen and (min-width: 1344px) {
+  @include for-size(desktop) {
     width: 1344px;
-    padding-right: 15px;
-    padding-left: 15px;
+    @include padding(inherit, 15px, inherit, 15px);
   }
 }

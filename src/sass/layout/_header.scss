@@ -10,7 +10,7 @@
   .header-link {
     display: none;
   }
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-landscape) {
     .header-link {
       display: block;
       margin-left: auto;
@@ -53,10 +53,10 @@
   text-align: center;
   justify-content: space-between;
 
-  @media (min-width: 768px) {
+  @include for-size(tablet-landscape) {
     padding-top: 30px;
   }
-  @media (min-width: 1344px) {
+  @include for-size(desktop) {
     display: none;
   }
 }
@@ -83,7 +83,7 @@
     background-color: transparent;
     color: $accentColor;
 
-    @media screen and (min-width: 768px) {
+    @include for-size(tablet-landscape) {
       display: none;
     }
   }
@@ -98,9 +98,8 @@
     color: $basicWhiteColor;
   }
 
-  @media screen and (max-width: 767px) {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  @media (max-width: 767px) {
+    @include margin(50px, 0, 50px, 0);
 
     .item:not(:last-child) {
       margin-bottom: 10px;
@@ -108,18 +107,16 @@
   }
 
   @media screen and (min-width: 768px) and (max-width: 1343px) {
-    margin-top: 72px;
-    margin-left: 218px;
+    @include margin(72px, inherit, inherit, 218px);
   }
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-landscape) {
     .item {
       font-size: 26px;
     }
   }
-  @media screen and (min-width: 1344px) {
+  @include for-size(desktop) {
     display: flex;
-    margin-right: auto;
-    margin-left: auto;
+    @include margin(inherit, auto, inherit, auto);
 
     .item {
       @include font(700, 14px, 1.2, 0.03em);
@@ -168,11 +165,11 @@
     display: none;
   }
 
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-landscape) {
     margin-left: 40px;
   }
 
-  @media (min-width: 1344px) {
+  @include for-size(desktop) {
     display: none;
   }
 }
@@ -181,7 +178,6 @@
   @media screen and (max-width: 1343px) {
     display: none;
   }
-  display: flex;
-  align-items: center;
+  @include flex-middle;
   margin-left: auto;
 }

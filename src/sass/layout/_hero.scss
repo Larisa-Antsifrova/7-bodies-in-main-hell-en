@@ -1,12 +1,4 @@
 .hero-section {
-  // .hero-background {
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   z-index: -1;
-  // }
   position: relative;
   background-image: url(../images/hero-bg/hero-bg-mobile@1x.png);
   background-size: cover;
@@ -15,51 +7,47 @@
   max-width: 100%;
   width: 100%;
 
+  @include for-size(tablet-landscape) {
+    background-image: url(../images/hero-bg/hero-bg-tablet@1x.png);
+    background-position-y: -170px;
+  }
+  @include for-size(desktop) {
+    background-image: url(../images/hero-bg/hero-bg-desktop@1x.png);
+    background-position-y: -200px;
+  }
+
   .img {
-    margin-left: auto;
-    margin-right: auto;
+    @include margin(inherit, auto, inherit, auto);
   }
   .button {
     display: block;
 
-    // &:focus,
-    // &:hover {
-    //   fill: $accentColor;
-    //   background-color: $basicWhiteColor;
-    // }
+    &:focus,
+    &:hover {
+      fill: $accentColor;
+      background-color: $basicWhiteColor;
+    }
   }
   .hero-content:last-child {
     margin-top: 72px;
-    @media screen and (min-width: 768px) {
+    @include for-size(tablet-landscape) {
       margin-top: 142px;
       width: 100%;
     }
-    // @media screen and (min-width: 1344px) {
-    //   width: 100%;
-    // }
   }
   .hero-content:not(:last-child) {
     @media screen and (max-width: 767px) {
       padding-bottom: 36px;
 
       .button {
-        margin-right: auto;
-        margin-left: auto;
+        @include margin(inherit, auto, inherit, auto);
       }
     }
-  }
-  @media screen and (min-width: 768px) {
-    background-image: url(../images/hero-bg/hero-bg-tablet@1x.png);
-    background-position-y: -170px;
-  }
-  @media screen and (min-width: 1344px) {
-    background-image: url(../images/hero-bg/hero-bg-desktop@1x.png);
-    background-position-y: -200px;
   }
 }
 
 .hero-container {
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-landscape) {
     display: flex;
     flex-wrap: wrap;
 
@@ -77,10 +65,10 @@
   .hero-label {
     display: block;
   }
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-landscape) {
     font-size: 26px;
   }
-  @media screen and (min-width: 1344px) {
+  @include for-size(desktop) {
     font-size: 58px;
   }
 }
@@ -98,12 +86,11 @@
   .orange-color {
     color: $accentColor;
   }
-  @media screen and (min-width: 1344px) {
+  @include for-size(desktop) {
     font-size: 20px;
   }
 }
 
 .hero-teacher {
-  display: flex;
-  justify-content: center;
+  @include flex-direct;
 }

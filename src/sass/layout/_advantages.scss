@@ -1,8 +1,5 @@
-// .advantages-section {
-//   background-color: #0000000a;
-// }
 .advantages-list {
-  @media screen and (min-width: 768px) {
+  @include for-size(tablet-landscape) {
     display: flex;
   }
 
@@ -21,12 +18,13 @@
 
   @media screen and (min-width: 768px) and (max-width: 1343px) {
     width: calc((100% - 21 * 2) / 3);
+
     &:not(:last-child) {
       margin-right: 21px;
     }
   }
 
-  @media screen and (min-width: 1344px) {
+  @include for-size(desktop) {
     width: calc(100% / 3);
   }
 }
@@ -42,18 +40,11 @@
 }
 
 .advantages-discription {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.42;
-
-  letter-spacing: 0.08em;
-
+  @include flex-middle;
   margin-left: 15px;
+  @include font(700, 14px, 1.42, 0.08em);
 
-  display: flex;
-  align-items: center;
-  @media screen and (min-width: 1344px) {
-    font-weight: 700;
+  @include for-size(desktop) {
     font-size: 20px;
     line-height: 1.65;
 
